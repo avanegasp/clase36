@@ -14,7 +14,7 @@ $(document).ready(function(){
         console.log(name)
       price = $('#price').val()
         console.log(price)
-      $.ajax({"url":"https://apijade.herokuapp.com/api/v1/products/8", "method": "DELETE", data: JSON.stringify({_method: "delete"}), contentType: "application/json" , success: function(data){
+      $.ajax({"url":urlApi, "method": "post", data: JSON.stringify({name :name, price :price}), contentType: "application/json" , success: function(data){
         $('body').prepend(`<h3>${data.name}: ${data.price}</h3>`)
       }, error: function(error){
           console.log(error)
