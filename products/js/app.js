@@ -14,7 +14,7 @@ $(document).ready(function(){
         console.log(name)
       price = $('#price').val()
         console.log(price)
-      $.ajax({"url":urlApi, "method": "delete", data: JSON.stringify({name :name, price :price}), contentType: "application/json" , success: function(data){
+      $.ajax({"url":urlApi, "method": "post", data: JSON.stringify({name :name, price :price}), contentType: "application/json" , success: function(data){
         $('body').prepend(`<h3>${data.name}: ${data.price}</h3>`)
       }
     })
